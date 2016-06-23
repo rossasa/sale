@@ -7,7 +7,7 @@
       <field name="description">Not enough credit on partner for this sales order. You can use "Before Delivery" on "Create Invoice" if available on "Other Information" tab.</field>
       <field name="sequence">10</field>
       <field name="model">sale.order</field>
-      <field name="code">if not object.check_credit_limit_ok():
+      <field name="code">if not object.check_credit_limit_ok() and object.payment_term!=1:
     failed = True</field>
       <field name="active" eval="True"/>
     </record>
